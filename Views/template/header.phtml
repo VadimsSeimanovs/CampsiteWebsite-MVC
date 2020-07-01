@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <title>Campsite - <?php echo $view->pageTitle; ?></title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div id="header">
+
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="../../index.php">Camp4Life</a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.php">Home</a>
+                    </li>
+                    <?php
+                    if(isset($_SESSION['login_user'])) {
+                        if($_SESSION['user_permission'] == 'Business'){
+                            echo'
+                            <li class="nav-item" >
+                        <a class="nav-link" href = "../../postanad.php" > Post an ad </a >
+                             </li >
+                            ';
+                        }
+                            echo '
+                    <li class="nav-item" >
+                        <a class="nav-link" href = "../../contactus.php" > Contact Us </a >
+                    </li >
+                    <li class="nav-item" >
+                        <a class="nav-link" href = "../../userAccount.php" > My Account </a >
+                    </li >
+                   ';
+                    }?>
+                </ul>
+                <ul class="navbar-nav">
+                    <?php
+                    if(isset($_SESSION['login_user'])){
+                        echo '<li class="nav-item">
+                        <a href="../../logout.php" id="loginbtn" class="btn btn-danger" name="logout">Log out</a>
+                        </li>';
+                    }else {
+                        echo '<li class="nav-item">
+                            <a href="#myModal" id="loginbtn" class="btn btn-success" data-toggle="modal">Sign in</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="btn btn-warning" id="signupbtn" href="../../registration.php">Sign up</a>
+                        </li>';
+                    }
+
+                    ?>
+
+                </ul>
+                    <form action="/livesearch.php" method="get">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchParam" autocomplete="off" onkeyup="showResult(this.value)" onkeypress="return noenter()" id="search-input">
+                        <div id="livesearch">
+                            <p>Suggestions: <span id="txtHint">
+                                </span></p>
+                        </div>
+                    </form>
+                    <script type="text/javascript" src="../../js/LiveSearch.js"></script>
+                    <input type="date" class="form-control mr-sm-2" name="Date" placeholder="Date" id="date-input">
+                    <form class="form-inline my-2 my-lg-0" ACTION="../../searchPage.php">
+                        <select name="country[]" multiple="multiple" size="2">
+                            <?php
+                            foreach ($view->countryDataSet as $campData){
+                                echo '<option value"'.$campData->getCampCountry().'">' .$campData->getCampCountry() . '</a>';
+                            }
+                            ?>
+                        </select>
+                        <select name="facilities" multiple="multiple" size="2">
+                            <option value="Toilet">Toilet</option>
+                            <option value="Pool">Pool</option>
+                            <option value="Wifi">Wifi</option>
+                            <option value="WaterSup">Water Supply</option>
+                            <option value="ChildrenPlay">Children Playground</option>
+                        </select>
+                </form>
+            </div>
+        </nav>
+        <script type="text/javascript" src="../../js/LiveSearch.js"></script>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.png" alt="Avatar">
+                    </div>
+                    <h4 class="modal-title">Member Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="messages"></div>
+                    <form action="/login.php" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Email" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                        </div>
+                        <div class="form-group">
+                            <div class="text-center" id="register-option">Don't have an account? <a href="../../registration.php">Register</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>
+<main class="camp-page">

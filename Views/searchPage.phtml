@@ -1,0 +1,33 @@
+<?php
+include_once ('template/header.phtml'); ?>
+ <ul class ="postpage" id="box">
+        <br>
+            <?php
+            foreach ($view->searchCampDataSet as $searchData) {
+                             echo '<li class="camp-post" id= "' . $searchData->getCampID() . '">';
+                             echo '<article data-standout-type id="postlist">';
+                             echo '<section class="content-column">';
+                             echo '<div class="campsite-information">';
+                              echo '<header class="campsite-header">'.$searchData->getCampName() .'</header>';
+                              echo '<p class="campsite-information"><img src="'.$searchData->getMainImage().'" class="camp-image" >';
+                             if(isset($_SESSION['login_user'])){
+                                 echo "Campsite Address: " . $searchData->getCampAddress() . '<br>' ."Campsite Country: " . $searchData->getCampCountry().  '<br>' . "Campsite Email: " . $searchData->getCampEmail() . '<br>' . "Campsite Phone: " . $searchData->getCampPhone() . '<br>';
+                             }else{
+                                 echo "Please signin first to see more information";
+                                 echo '<br>';
+                             }
+                             if($searchData->getCampToilet() != null || $searchData->getCampPool() != null || $searchData->getCampWifi() != null || $searchData->getCampWaterSup() != null || $searchData->getCampChildrenPlay() != null){
+                    echo 'Campsite Facilities: ' . $searchData->getCampToilet() ." " . $searchData->getCampPool() ." ". $searchData->getCampWifi() ." ". $searchData->getCampWaterSup() ." ". $searchData->getCampChildrenPlay();
+                    echo '<br>';
+                }
+                             echo "Campsite Open Date: ". $searchData->getCampOpenDate();
+                             echo '</p>';
+                             echo '</div>';
+                             echo '<div class="button-camp">';
+                             echo '<p id="amount-views">Amount of views: 0<button type="button" class="btn btn-success" value="View" id="view-camp">' . "View" . '</button>' . '</p>';
+                            echo '</div>' . '</section>' . '</article>' . '</li>';
+                         }
+                         ?>
+    </ul>
+<?php
+include_once ('template/footer.phtml');

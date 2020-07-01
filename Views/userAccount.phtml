@@ -1,0 +1,313 @@
+<?php
+include_once ('template/header.phtml');?>
+<div class="empty-box">
+</div>
+<div class="container emp-profile">
+    <form method="post" action="../userAccount.php">
+    <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="/images/avatar.png" alt="avatar" class="profileimg" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        <?php echo $user->getUserName() . " " . $user->getUserSurname(); ?>
+                    </h5>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>User Id</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><?php echo $user->getUserID(); ?></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><?php echo $user->getUserName(); ?></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Surname</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><?php echo $user->getUserSurname(); ?></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><?php echo $user->getUserEmail(); ?></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Account type</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><?php echo $user->getUserType(); ?></p>
+                            </div>
+                        </div>
+                        <?php if($user->getUserType() == "Admin"){
+                            echo '
+                            <form method="post" action="../userAccount.php">
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Remove user:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="RemoveUser" class="adminFunction" id="adminFunction" placeholder="Enter the UserID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">View User Account:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="test1" class="adminFunction" id="adminFunction" placeholder="Enter the UserID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">View Campsite:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="test2" class="adminFunction" id="adminFunction" placeholder="Enter the CampsiteID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Remove Campsite:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="RemoveCampsite" class="adminFunction" id="adminFunction" placeholder="Enter the CampsiteID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Give Admin to the user:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="GiveAdmin" class="adminFunction" id="adminFunction" placeholder="Enter the UserID or Email">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Remove Admin from the user:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="RemoveAdmin" class="adminFunction" id="adminFunction" placeholder="Enter the UserID or Email">
+                                <input type="submit">
+                            </div>
+                            </div>       
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Give Moderator to the user:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="GiveModerator" class="adminFunction" id="adminFunction" placeholder="Enter the UserID or Email">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Remove Moderator from the user:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="RemoveModerator" class="adminFunction" id="adminFunction" placeholder="Enter the UserID or Email">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Check messages:</label>
+                            </div>
+                            <div class="col-md-6">
+                            <a href="../contactMessages.php">
+                                <input type="button" name="checkMessages" class="adminFunction" id="adminFunction" placeholder="Contact us system" value="Contact us system">
+                            </a>
+                            </div>
+                            </div>
+                            <div class="list-group">
+                                <header class="m-3">Pending Approvement:</header>
+                             </div>
+                             </div>
+                             
+                             </form>
+                           
+                
+                             ';
+
+                            foreach ($view->campsiteDataSet as $campData) {
+                             echo '<li class="camp-post" id= " ' . $campData->getCampID() . '">';
+                             echo '<article data-standout-type id="postlist">';
+                             echo '<section class="content-column">';
+                             echo '<div class="campsite-information">';
+                              echo '<header class="campsite-header" id="Admin-header">'.$campData->getCampName() .'</header>';
+                              echo '<p class="campsite-information"><img src="../'.$campData->getMainImage().'" class="camp-image" >';
+                              echo "Campsite Address: " . $campData->getCampAddress() . '<br>'."Campsite Country: " . $campData->getCampCountry() .'<br>' . "Campsite Email: " . $campData->getCampEmail() . '<br>' . "Campsite Phone: " . $campData->getCampPhone() . '<br>';
+                             echo  "Campsite Open Date: ". $campData->getCampOpenDate();
+                             echo '</p>';
+                             echo '</div>';
+                             echo '<div class="button-camp">';
+                                echo '<form method="post" action="../userAccount.php">';
+                                echo '<input type="hidden" id="CampID" name="campIDhidden" value="'. $campData->getCampID() .'">';
+                             echo '<input type="submit" value="Decline" name="Declined" class="btn-danger" id="Admin-decline"> <input type="submit" value="Approved" name="Approved" class="btn-success" id="Admin-approve">' . '</a>' . '</p>';
+                             echo '</form>';
+                            echo '</div>' . '</section>' . '</article>' . '</li>';
+                         }
+                            foreach ($view->userDataSet as $userData){
+                                echo '
+                                 <div class="row">
+                            <div class="col-md-6">
+                                <label>User Id</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>' . $userData->getUserID() . '</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>' . $userData->getUserName() . '</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Surname</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>' . $userData->getUserSurname() . '</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>' . $userData->getUserEmail() .'</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Account type</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>'.  $userData->getUserType() . '</p>
+                            </div>
+                        </div>';
+                         echo '<form method="post" action="../userAccount.php">';
+                         echo '
+                        <input type="hidden" id="UserID" name="userIDhidden" value="'. $userData->getUserID() .'">
+                       <input type="submit" value="Declined" name="userDecline" class="btn-danger" id="Admin-decline"> <input type="submit" value="Approved" name="userApprove" class="btn-success" id="Admin-approve">
+                            </form>    ';
+                            }
+
+                           echo '</div>';
+
+
+                        }elseif($user->getUserType() == "Moderator" || $user->getUserType() == "Admin"){
+                            echo '
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Remove user:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="ModeratorRemoveUserModer" class="adminFunction" id="adminFunction" placeholder="Enter the UserID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">View User Account:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="ModeratorViewUser" class="adminFunction" id="adminFunction" placeholder="Enter the UserID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">View Campsite:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="ModeratorViewCampsite" class="adminFunction" id="adminFunction" placeholder="Enter the CampsiteID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="adminFunction">Remove Campsite:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="ModeratorRemoveCampsite" class="adminFunction" id="adminFunction" placeholder="Enter the CampsiteID">
+                                <input type="submit">
+                            </div>
+                            </div>
+                            <div class="list-group">
+                                <header class="m-3">Pending Approvement:</header>
+                             </div>
+                            ';
+                        }
+                        else{
+                            echo '
+                            <div class="list-group">
+                                    <header class="m-3">User Favorites:</header>';
+                            foreach ($view->favoriteCampsite as $campData) {
+                             echo '<li class="camp-post" id= " ' . $campData->getCampID() . '">';
+                             echo '<article data-standout-type id="postlist">';
+                             echo '<section class="content-column">';
+                             echo '<div class="campsite-information">';
+                              echo '<header class="campsite-header" id="User-header">'.$campData->getCampName() .'</header>';
+                              echo '<p class="campsite-information"><img src="../'.$campData->getMainImage().'" class="camp-image" >';
+                              echo "Campsite Address: " . $campData->getCampAddress() . '<br>'."Campsite Country: " . $campData->getCampCountry() .'<br>' . "Campsite Email: " . $campData->getCampEmail() . '<br>' . "Campsite Phone: " . $campData->getCampPhone() . '<br>';
+                             echo  "Campsite Open Date: ". $campData->getCampOpenDate();
+                             echo '</p>';
+                             echo '</div>';
+                             echo '<div class="button-camp">';
+                             echo '<input type="submit" value="Remove favorite" name="removeFavorite" class="btn-danger" >';
+                             echo '<input type="hidden" id="CampID" name="campIDhidden" value="'. $campData->getCampID() .'">';
+
+                            echo '</div>' . '</section>' . '</article>' . '</li>';
+                         };
+                             echo '</div>';
+                        }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="empty-box" id="box1">
+</div>
+<?php
+include_once ('template/footer.phtml');
+?>

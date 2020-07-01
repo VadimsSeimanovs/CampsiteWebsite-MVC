@@ -1,0 +1,520 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2b542c;
+}
+#title {
+    margin-top: 12px;
+    background-color: #fff;
+    color: #000;
+
+}
+#content {
+    background-color: #fff;
+}
+#footer p{
+    margin-bottom: auto;
+}
+#footer {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+#header{
+    position: relative;
+}
+#header img{
+    width:100%;
+    height: 250px;
+}
+main {
+    background-image: url("/images/background.jpg");
+}
+.postpage{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#box ul{
+    display: block;
+    list-style-type: disc;
+
+}
+.camp-post li{
+    display: list-item;
+}
+.postlist{
+    position: relative;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    margin: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+#postlist article{
+    display: block;
+}
+.content-column, .information-container {
+    display: inline-block;
+    vertical-align: top;
+}
+.camp-image{
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin: 0 20px 20px 20px;
+    border-radius: 10px;
+}
+.campsite-header header{
+    margin-right: 50px;
+}
+.campsite-information p{
+    margin-left: 10px;
+    width:1200px;
+}
+.campsite-information{
+    font-size: 18px;
+    color: #ffffff;
+    margin: 20px 0 0 0;
+}
+.campsite-header{
+    font-size: 22px;
+    color: #ffffff;
+    margin-left: 20px;
+}
+#box{
+    background: rgba(24,88,40,0.7);
+    margin: 0 60px 0 60px;
+    border-radius: 15px;
+    height: auto;
+}
+.navbar{
+    margin-bottom: 0;
+}
+.empty-box{
+    height: 40px;
+}
+.button-camp button{
+    color: black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+button:hover{
+    opacity: 0.7;
+}
+.button-camp{
+    float: right;
+    margin-right: 100px;
+    position: relative;
+    margin-top: 50px;
+}
+.button-camp label{
+    color: #3c3c3c;
+}
+.button-camp p{
+    font-size: 14px;
+    color: #ffffff;
+    border: 2px;
+}
+.login-form label{
+    color: white;
+    font-size: 22px;
+}
+.login-form input{
+    width: 200px;
+    height: auto;
+}
+.login-form {
+    margin: 0 100px 0 100px;
+}
+#box1{
+    height: 200px;
+}
+.login-form small{
+    color: white;
+}
+.registration-form{
+    color: white;
+}
+#view-camp{
+    color: white;
+}
+#header{
+    background-image: url("/images/campsite.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+#signupbtn{
+    color: white;
+}
+.carousel-inner img{
+        width: 1200px;
+        height: 400px;
+}
+.form-control{
+    height: 40px;
+    box-shadow: none;
+    color: #969fa4;
+}
+.form-control:focus{
+    border-color: #5cb85c;
+}
+.form-control, .btn{
+    border-radius: 3px;
+}
+.signup-form{
+    width: 400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.signup-form h2{
+    color: #636363;
+    margin: 0 0 15px;
+    position: relative;
+    text-align: center;
+}
+.signup-form h2:before, .signup-form h2:after{
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #d4d4d4;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}
+.signup-form h2:before{
+    left: 0;
+}
+.signup-form h2:after{
+    right: 0;
+}
+.signup-form .hint-text{
+    color: #999;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.signup-form form{
+    color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #f2f3f7;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.signup-form .form-group{
+    margin-bottom: 20px;
+}
+.signup-form input[type="checkbox"]{
+    margin-top: 3px;
+}
+.signup-form .btn{
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 140px;
+    outline: none !important;
+}
+.signup-form .row div:first-child{
+    padding-right: 10px;
+}
+.signup-form .row div:last-child{
+    padding-left: 10px;
+}
+.signup-form a{
+    color: #fff;
+    text-decoration: underline;
+}
+.signup-form a:hover{
+    text-decoration: none;
+}
+.signup-form form a{
+    color: #5cb85c;
+    text-decoration: none;
+}
+.signup-form form a:hover{
+    text-decoration: underline;
+}
+#signin-option{
+    color: white;
+}
+.custom-file input{
+    opacity:1;
+}
+.modal-login {
+    color: #636363;
+    width: 350px;
+}
+.modal-login .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+    border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+    min-height: 40px;
+    border-radius: 3px;
+}
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-login .modal-footer {
+    background: #ecf0f1;
+    border-color: #dee4e7;
+    text-align: center;
+    justify-content: center;
+    margin: 0 -20px -20px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.modal-login .modal-footer a {
+    color: #999;
+}
+.modal-login .avatar {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #60c7c1;
+    padding: 15px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+    width: 100%;
+}
+.modal-login.modal-dialog {
+    margin-top: 80px;
+}
+.modal-login .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+    background: #45aba6;
+    outline: none;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+#register-option{
+    color: grey;
+}
+#contact-form{
+    display: block;
+    color: white;
+}
+.controls{
+    margin: 20px 20px 20px 20px;
+}
+.emp-profile{
+    padding: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 200px;
+    background-color: #1b1e21;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+.postad-form label{
+    color: white;
+}
+#Admin-header{
+    color: black;
+}
+#Admin-approve {
+    margin-right: 200px;
+}
+.tab-content table{
+    color: white;
+}
+#map {
+    height: 300px;
+}
+/* The popup bubble styling. */
+.popup-bubble {
+    /* Position the bubble centred-above its parent. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -100%);
+    /* Style the bubble. */
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    overflow-y: auto;
+    max-height: 60px;
+    box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
+}
+/* The parent of the bubble. A zero-height div at the top of the tip. */
+.popup-bubble-anchor {
+    /* Position the div a fixed distance above the tip. */
+    position: absolute;
+    width: 100%;
+    bottom: /* TIP_HEIGHT= */ 8px;
+    left: 0;
+}
+/* This element draws the tip. */
+.popup-bubble-anchor::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Center the tip horizontally. */
+    transform: translate(-50%, 0);
+    /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+    width: 0;
+    height: 0;
+    /* The tip is 8px high, and 12px wide. */
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: /* TIP_HEIGHT= */ 8px solid white;
+}
+/* JavaScript will position this div at the bottom of the popup tip. */
+.popup-container {
+    cursor: auto;
+    height: 0;
+    position: absolute;
+    /* The max width of the info window. */
+    width: 200px;
+}
+#response div{
+    border: 1px solid lightgrey;
+    height: 80px;
+    margin-bottom: 5px;
+    padding: 50px 0px 0px 0px;
+    text-align: center;
+}
+#loader{
+    display: block;
+    margin: auto;
+}
+.mainMap{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 600px !important;
+}
+#txtHint{
+    width: 300px;
+}
+#livesearch{
+    width: 300px;
+}
+#date-input{
+    width: 200px;
+}
+#search-input{
+    margin-top: 40px;
+}
+#map-img{
+    width: 100px;
+    height: 100px;
+}
+#info-window{
+    width: 300px;
+    height: 300px;
+}
+@media only screen and (max-width: 600px){
+    #box{
+        background: rgba(24,88,40,0.7);
+        margin: 0 20px 0 20px;
+        border-radius: 10px;
+        height: auto;
+    }
+    #header img{
+        width:100%;
+        height: 150px;
+    }
+    .campsite-information p{
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .campsite-slider{
+        width: 100%;
+    }
+    .carousel-inner img{
+        height: 200px;
+    }
+    #Admin-approve {
+        margin-right: 50px;
+    }
+}

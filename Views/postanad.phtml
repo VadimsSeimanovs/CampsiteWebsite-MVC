@@ -1,0 +1,124 @@
+<?php
+include_once('template/header.phtml');?>
+<div class="empty-box">
+
+</div>
+<div class="postad-form" id="box">
+<form id="postad-form" method="post" action="../postanad.php" role="form" enctype="multipart/form-data">
+    <div class="messages"></div>
+    <div class="controls" id="postanadform">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="camp_name">Campsite Name *</label>
+                    <input id="form_campname" type="text" name="CampName" class="form-control" placeholder="Please enter your campsite name *" required="required" data-error="Campsite name is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="camp-address">Address *</label>
+                    <input id="form_address" type="text" name="CampAddress" class="form-control" placeholder="Please enter your campsite address *" required="required" data-error="Address is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="form_country">Country *</label>
+                    <input id="form_country" type="text" name="CampCountry" class="form-control" placeholder="Please enter Country *" required="required" data-error="Country is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="CampEmail" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="form_phone">Phone *</label>
+                    <input id="form_phone" type="number" name="CampPhone" class="form-control" placeholder="Please enter your contact phone number *" required="required" data-error="Phone number is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="form_facilities">Facilities *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Toilet" id="defaultCheck1" name="Toilet">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Toilet
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Pool" id="defaultCheck1" name="Pool">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Pool
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Wifi" id="defaultCheck1" name="Wifi">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Wifi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Water Supply" id="defaultCheck1" name="WaterSup">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Water Supply
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Children Playground" id="defaultCheck1" name="ChildrenPlay">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Children Playground
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="custom-file">Select main image
+                <input type="file" name="image" class="custom-file-input">
+                <span class="custom-file-control"></span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="custom-file">Select second image
+                <input type="file" name="secondImage" class="custom-file-input">
+                <span class="custom-file-control"></span>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="postad-form">
+                    <label for="form_opendate">Openening Dates *</label>
+                    <input id="form_opendate" type="date" name="CampOpenDate" class="form-control" placeholder="Please enter opening date *" required="required" data-error="Opening date is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Post my ad">
+            </div>
+        </div>
+    </div>
+</form>
+    </div>
+<div class="empty-box">
+
+</div>
+<?php
+include_once('template/footer.phtml');

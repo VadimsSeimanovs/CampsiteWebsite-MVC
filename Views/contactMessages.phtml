@@ -1,0 +1,26 @@
+<?php require 'template/header.phtml';
+?>
+<ul class="postpage" id="box">
+    <table class="tab-content">
+        <th>Message ID</th>
+        <th>User ID</th>
+        <th>Firstname</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Message</th>
+<?php
+    foreach ($view->messagesData as $contactData){
+            echo '<tr>';
+            echo '<td>' . $contactData->getContactID() . '</td>' ;
+            echo '<td>' . $contactData->getForeignUserID() . '</td>';
+            echo '<td>' . $contactData->getFirstName() . '</td>';
+            echo '<td>' . $contactData->getSurname() . '</td>';
+            echo '<td>' . $contactData->getEmail() . '</td>';
+            echo '<td>' . $contactData->getMessage() . '</td>';
+            echo '</tr>';
+    }
+?>
+    </table>
+</ul>
+
+<?php require 'template/footer.phtml'?>

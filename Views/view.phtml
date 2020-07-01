@@ -1,0 +1,91 @@
+<?php
+require_once ('template/header.phtml'); ?>
+    <div class="empty-box">
+    </div>
+        <ul class ="postpage" id="box">
+    <?php foreach ($view->campsiteData as $campData) {
+        echo '<li class="camp-post" id= "' . $campData->getCampID() . '">';
+        echo '<article data-standout-type id="postlist">';
+        echo '<section class="content-column">';
+        echo '<div class="campsite-information">';
+        echo '<header class="campsite-header">' . $campData->getCampName() . '</header>';
+        echo '<p class="campsite-information"><img src="' . $campData->getMainImage() . '" class="camp-image" >';
+        if (isset($_SESSION['login_user'])) {
+            echo "Campsite Address: " . $campData->getCampAddress() . '<br>' . "Campsite Country: " . $campData->getCampCountry() . '<br>' . "Campsite Email: " . $campData->getCampEmail() . '<br>' . "Campsite Phone: " . $campData->getCampPhone() . '<br>';
+        } else {
+            echo "Please signin first to see more information";
+            echo '<br>';
+        }
+
+        if ($campData->getCampToilet() != null || $campData->getCampPool() != null || $campData->getCampWifi() != null || $campData->getCampWaterSup() != null || $campData->getCampChildrenPlay() != null) {
+            echo 'Campsite Facilities: ' . $campData->getCampToilet() . " " . $campData->getCampPool() . " " . $campData->getCampWifi() . " " . $campData->getCampWaterSup() . " " . $campData->getCampChildrenPlay();
+            echo '<br>';
+        }
+        echo "Campsite Open Date: " . $campData->getCampOpenDate();
+        echo '</p>';
+        echo '</div>';
+
+        echo '<div class="button-camp">';
+        echo '</div>';
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo '<header class="campsite-header">Images</header>';
+        echo '<img src="' . $campData->getMainImage() . '" class="camp-image" >';
+        echo '<img src="' . $campData->getSecondImage() . '" class="camp-image" >';
+        echo '</section>';
+        echo '</article>';
+        echo '</li>';
+        echo '<script>';
+
+        echo '
+        function initMap() {
+            var myLoc = {lat: '; echo $campData->getCampLat(); echo', lng: '; echo $campData->getCampLong(); echo'};
+         ';
+        //echo <<<'JS'
+        echo ' var map = new google.maps.Map(document.getElementById(\'map\'), {';
+         echo 'zoom: 10,
+        center: myLoc
+        });
+        ';
+       echo ' var contentString = \'<div id="content">\'+
+              \'<div id="siteNotice">\'+
+             \'</div>\'+
+            \'<h1 id="firstHeading" class="firstHeading">';echo $campData->getCampName(); echo'</h1>\'+
+            \'<div id="bodyContent">\'+
+            \'<p><b>Campsite Name: ';echo $campData->getCampName(); echo'</b>, \'+
+            \'Email: ';echo $campData->getCampEmail();echo' , \'+ 
+            \'Phone number: ';echo $campData->getCampPhone();echo' , \'+
+            \'Open Date: ' ;echo $campData->getCampOpenDate();echo' . \'+
+            \'</p>\'+
+            \'</div>\'+
+            \'</div>\';
+        ';
+        echo '
+             var infowindow = new google.maps.InfoWindow({
+              content: contentString
+         });
+
+        var marker = new google.maps.Marker({
+             position: myLoc,
+             map: map,
+            title: \'Title\'
+        });
+        marker.addListener(\'click\', function() {
+         infowindow.open(map, marker);
+        });
+}
+        ';
+        echo '</script>';
+        echo '<div id="map">';
+        echo '</div>';
+    }
+?>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1M6bF-9b5Kc3XFPDbI5wJNZEqrYVVH3s&callback=initMap">
+            </script>
+        </ul>
+<?php require_once ('template/footer.phtml') ?>
